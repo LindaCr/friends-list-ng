@@ -1,0 +1,37 @@
+<h1>{{title}}</h1>
+<div>
+    <h2>Add a Friend</h2>
+    <table class="table table-bordered">
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]='friend.name' type='text'></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input [(ngModel)]='friend.age' type='number'></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input [(ngModel)]='friend.email' type='text'></td>
+        </tr>
+        <tr>
+            <td>BFF</td>
+            <td><input [(ngModel)]='friend.bff' type='checkbox'></td>
+        </tr>
+    </table>
+    <span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>BFF</th>
+    </tr>
+    <tr *ngFor='let friend of friends'>
+        <td>{{friend.name}}</td>
+        <td>{{friend.age}}</td>
+        <td>{{friend.email}}</td>
+        <td>{{friend.bff}}</td>
+    </tr>
+</table>
